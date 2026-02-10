@@ -10,7 +10,6 @@ app.use(express.json());
 const EMAIL = process.env.OFFICIAL_EMAIL;
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
 
-/* ---------- Utility Functions ---------- */
 
 const fibonacci = (n) => {
   const res = [0, 1];
@@ -33,7 +32,6 @@ const hcfArray = (arr) => arr.reduce((a, b) => gcd(a, b));
 const lcm = (a, b) => (a * b) / gcd(a, b);
 const lcmArray = (arr) => arr.reduce((a, b) => lcm(a, b));
 
-/* ---------- POST /bfhl ---------- */
 
 app.post("/bfhl", async (req, res) => {
   try {
@@ -100,7 +98,6 @@ app.post("/bfhl", async (req, res) => {
   }
 });
 
-/* ---------- GET /health ---------- */
 
 app.get("/health", (req, res) => {
   res.json({
@@ -109,7 +106,6 @@ app.get("/health", (req, res) => {
   });
 });
 
-/* ---------- Start Server ---------- */
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
